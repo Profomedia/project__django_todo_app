@@ -1,14 +1,35 @@
-{% load static %}
-{% block title %}
-    SignUp
-{% endblock title %}    
+{% extends "layout.html" %}
+{% block title %}SignUp{% endblock title %}    
 {% block content %}
     <div class="signup-login">
-        <form method="POST">
-            {% csrf_token %}
-            <div class="heading">
-                Signup
+        <div class="signup-box">
+            <form method="POST">
+                {% csrf_token %}
+                <div class="heading">
+                    Signup
+                </div>
+                <div class="line"></div>
+                <div class="field">
+                    <b>Username</b>
+                    <input type="text" name="fnm" required class="inp">
+                </div>
+                <div class="field">
+                    <b>Email</b>
+                    <input type="text" name="email" required="" class="inp">
+                </div>
+                <div class="field">
+                    <b>Password</b>
+                    <input type="password" name="pwd" required="" class="inp">
+                </div>
+                <div class="field">
+                    <input type="submit" value="Signup" class="submit-button">
+                </div>
+            </form>
+            <div class="field">
+                <b style="margin-left:130px;">Already have an account?</b>
+                <br>
+                <a href="login" class="anc"></a>
             </div>
-        </form>
+        </div>
     </div>
 {% endblock content %}
